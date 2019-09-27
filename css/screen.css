@@ -20,10 +20,25 @@
 \*------------------------------------*/
 
 :root {
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-extra-dark: #1B4186;
+    --global-color-transparent: rgba(51, 133, 255, 0,30);
+    --global-color-x-transparent: rgba(51, 133, 255, 0,75);
 
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7; 
+    --global-color-neutral-xx-light: #CACCD4;
+    --global-color-neutral-x-light: #B5B6C0;
+    --global-color-neutral-light: #A0A1AD;
+    --global-color-neutral: #8B8C9A;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4B4C60;
+    --global-color-neutral-xxx-dark: #35374D;
+    --global-color-neutral-xxxx-dark: #20223A;
 }
-
-/* CSS variables here */
 
 /*------------------------------------*\
 #GENERIC
