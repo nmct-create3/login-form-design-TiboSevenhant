@@ -1,6 +1,19 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@font-face{
+	font-family: 'Inter Web';
+	font-weight: 400;
+	font-display: swap; /* Zorgt voor een correcte omwisseling als het font geladen is. */
+	src: url('../fonts/Inter-Regular.woff2');
+}
+
+@font-face{
+	font-family: 'Inter Web';
+	font-weight: 600;
+	font-display: swap; /* Zorgt voor een correcte omwisseling als het font geladen is. */
+	src: url('../fonts/Inter-SemiBold.woff2');
+}
 
 /*------------------------------------*\
 #Variables
@@ -25,8 +38,9 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: 'Inter Web', 'Comic Sans MS', Helvetica, arial, sans-serif;
+    color: #20223a;
+	background-color: #F5F6FA !important;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -47,14 +61,14 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
-    color: white;
+    background: white;
+    color: #3385FF;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
-    color: white;
+    background: white;
+    color: #3385FF;
     text-shadow: none;
 }
 
@@ -158,18 +172,23 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #4F95FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #2E77E6;
+}
+
+label,
+input{
+	display: block;
 }
 
 /*------------------------------------*\
@@ -189,6 +208,9 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    display: flex;
+    align-items: center;
+    min-height: 100vh; /* Altijd de hoogte van het zichtbare deel van het scherm */
 }
 
 /* size modifiers */
@@ -432,17 +454,79 @@ a:focus {
     Website main logo
 */
 
+.c-logo{
+	height: 24px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 48px;
+}
+
+.c-logo__symbol{
+	display: block;
+	height: 100%; /* Dus, de hoogte van de parent (.c-logo) */
+}
+
+.c-logo__path--1{
+	fill: #28223A;
+}
+
+.c-logo__path--2{
+	fill: #3385FF;
+}
+
+.c-logo__path--3{
+	fill: #1B4186;
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card{
+	background: #ffffff;
+
+	border: 1px solid #00000015;
+	border-radius: 3px;
+}
+
+.c-card__body{
+	padding: 48px;
+}
+
+.c-card__title{
+	padding-top: 48px;
+
+	display: flex;
+	justify-content: center;
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21px;
+}
+
+.c-card__footer{
+	padding-top: 24px;
+	
+	display: flex;
+	justify-content: center;
+
+	border-top: 1px solid #00000030;
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
+
+.c-form-field--option{
+	display: flex;
+	align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +535,41 @@ a:focus {
 */
 
 .c-input {
+	width: 100%;
 
+	font-family: inherit;
+	font-size: 16px;
+	color: #28223A;
+	line-height: 24px;
+
+	padding: 11px 16px; /* Verticaal 1 + 11 + 24 + 11 + 1 */
+
+	border: 1px solid #e2e3e7;
+	border-radius: 4px;
+
+	appearance: none;
+	-webkit-appearance: none;
 }
 
 .c-input:focus {
+	focus: none;
+	outline: none;
+	border-color: #3385FF;
+	box-shadow: h-offset v-offset blur spread color;
+	box-shadow: 0 0 0 3px #3385ff4d; 
+	border-radius: 3px;
+}
+
+/*
+    Component: Forgot password 
+    ---
+    Class to put on forgot password link
+*/
+
+.c-forgot-password{
+    margin-top: -8px;
+    display: flex;
+    justify-content: center;
 }
 
 /*
@@ -464,7 +579,14 @@ a:focus {
 */
 
 .c-label {
+	font-size: 14px;
+	line-height: 16px;
+	margin-bottom: 0px;
+	color: #606274;
+}
 
+.c-label--option{
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -480,19 +602,36 @@ a:focus {
 */
 
 .c-button {
+	width: 100%;
+	padding: 12px 0;
 
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	color: #fff;
+	font-weight: 600;
+
+	border: 1px solid #2e77e6;
+
+	border-radius: 3px;
+	background: #3385FF;
+
+	outline: none;
+	transition: all .1s ease-out;
 }
 
 .c-button:hover {
-
+	background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+	background-color: #3385FF;
+	box-shadow: 0 0 0 3px #3385ff4d;
 }
 
 .c-button:active {
-
+	background-color: #2e77e6;
+	box-shadow: none;
 }
 
 .c-button--block {
